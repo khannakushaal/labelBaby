@@ -147,6 +147,57 @@ img{max-width:100%}
 .insight .ic{width:22px;height:22px;color:var(--brand-deep);flex:none}
 .insight b{font-family:var(--fd);font-size:13.5px}
 .insight p{font-size:12px;color:var(--ink-2);margin-top:2px}
+/* diary: today's meal + emoji symptom log */
+.meal-card{padding:0;overflow:hidden}
+.meal-head{display:flex;align-items:flex-start;justify-content:space-between;padding:14px 16px 8px}
+.meal-head b{font-family:var(--fd);font-size:16px;font-weight:800;display:block}
+.meal-head>div span{font-size:12.5px;color:var(--ink-2)}
+.meal-edit{width:36px;height:36px;border-radius:50%;background:var(--brand);color:#fff;display:grid;place-items:center;box-shadow:var(--sh-sm);flex:none}
+.meal-edit .ic{width:16px;height:16px;stroke-width:2.2}
+.meal-body{display:flex;align-items:center;gap:12px;padding:4px 16px 16px}
+.meal-thumb{width:56px;height:56px;border-radius:14px;flex:none;background-size:cover;background-position:center;box-shadow:var(--sh-sm);border:1px solid var(--line)}
+.meal-info{flex:1;min-width:0}
+.meal-info b{font-family:var(--fd);font-size:15px;font-weight:700;display:block;line-height:1.25}
+.meal-info span{font-size:12.5px;color:var(--ink-2)}
+.symlog{padding:15px 14px 18px}
+.sl-head{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.sl-ic{width:34px;height:34px;border-radius:10px;background:var(--safe-bg);color:var(--brand-deep);display:grid;place-items:center;flex:none}
+.sl-ic .ic{width:18px}
+.sl-head b{font-family:var(--fd);font-size:16px;font-weight:800;flex:1}
+.sl-time{font-size:12px;color:var(--ink-3)}
+.emoji-row{display:flex;gap:6px;justify-content:space-between}
+.emoji-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;padding:4px 0;border-radius:14px;transition:transform .14s ease}
+.emoji-face{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;border:3px solid transparent;transition:.15s}
+.emoji-btn.on .emoji-face{border-color:currentColor;transform:scale(1.06)}
+.emoji-btn .face{width:54px;height:54px}
+.emoji-lb{font-size:11.5px;font-weight:600;color:var(--ink-2);text-align:center;line-height:1.15}
+.emoji-btn.on .emoji-lb{color:var(--ink)}
+.emoji-btn:active{transform:scale(.94)}
+.pi-card{padding:16px}
+.pi-card.warn{background:#FCF4E7;border-color:#F0E1C4}
+.pi-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.pi-ic{width:34px;height:34px;border-radius:10px;background:var(--safe-bg);color:var(--brand-deep);display:grid;place-items:center;flex:none}
+.pi-ic.warn{background:var(--caution-bg);color:var(--caution)}
+.pi-ic .ic{width:18px}
+.pi-head b{font-family:var(--fd);font-size:16px;font-weight:800}
+.pi-body{display:flex;align-items:center;gap:14px}
+.pi-body p{flex:1;font-size:13.5px;color:var(--ink-2);line-height:1.5}
+.pi-illus{width:74px;height:74px;flex:none}
+.pi-illus svg{width:74px;height:74px}
+.wk-chart{display:flex;align-items:flex-end;gap:7px;height:150px;padding-top:6px}
+.wk-bar{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.wk-val{font-family:var(--fm);font-size:11px;font-weight:700;color:var(--ink-3);min-height:13px}
+.wk-fill{width:100%;max-width:26px;border-radius:7px 7px 3px 3px;transition:height .35s cubic-bezier(.22,.61,.36,1)}
+.wk-fill.green{background:linear-gradient(180deg,#8FCBA6,#6FB68E)}
+.wk-fill.amber{background:linear-gradient(180deg,#F1C25A,#E8A54C)}
+.wk-fill.zero{background:var(--line)}
+.wk-lb{font-size:11px;color:var(--ink-3);font-weight:600}
+.sev-thumb{width:44px;height:44px;border-radius:12px;flex:none;display:grid;place-items:center}
+.sev-thumb .face{width:30px;height:30px}
+.meal-thumb-ico{background:var(--safe-bg);color:var(--brand-deep);display:grid;place-items:center}
+.meal-thumb-ico .ic{width:26px;height:26px}
+.sheet-div{display:flex;align-items:center;gap:10px;margin:16px 0 12px;color:var(--ink-3);font-size:12px;font-weight:600}
+.sheet-div::before,.sheet-div::after{content:"";flex:1;height:1px;background:var(--line)}
 
 /* bottom nav */
 .tabbar{flex:none;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);
@@ -156,6 +207,10 @@ img{max-width:100%}
 .tab.on{color:var(--brand-deep)}
 .tab.scan-tab .ic{background:linear-gradient(135deg,var(--brand),var(--teal));color:#fff;width:46px;height:46px;border-radius:15px;padding:11px;box-shadow:0 8px 16px rgba(13,148,120,.34);margin-top:-16px}
 .tab.scan-tab.on{color:var(--brand-deep)}
+.fab{position:absolute;right:16px;bottom:86px;width:56px;height:56px;border-radius:18px;background:linear-gradient(135deg,var(--brand),var(--teal));color:#fff;display:grid;place-items:center;box-shadow:0 12px 24px rgba(13,148,120,.42);z-index:30;transition:transform .15s ease}
+.fab .ic{width:26px;height:26px;stroke-width:2.4}
+.fab:active{transform:scale(.92)}
+@media(hover:hover){.fab:hover{transform:translateY(-2px)}}
 
 /* generic screen headers inside app */
 .screen-head{display:flex;align-items:center;gap:12px;padding:4px 0 14px}
@@ -606,6 +661,7 @@ tbody tr:last-child td{border-bottom:none}
 <symbol id="i-baby" viewBox="0 0 24 24"><path d="M9 12h.01M15 12h.01M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></symbol>
 <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
 <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
 </defs></svg>
 
 <!-- ===== TOP CHROME + ROLE TOGGLE ===== -->
@@ -638,6 +694,7 @@ tbody tr:last-child td{border-bottom:none}
       <div class="content" id="app-content"><!-- rendered by JS --></div>
 
       <!-- bottom nav -->
+      <button id="fab" class="fab hidden" onclick="addMeal()" aria-label="Log a meal"><svg class="ic"><use href="#i-plus"/></svg></button>
       <nav class="tabbar" id="tabbar">
         <button class="tab on" data-tab="home" onclick="navMobile('home')"><svg class="ic"><use href="#i-home"/></svg>Home</button>
         <button class="tab" data-tab="diary" onclick="navMobile('diary')"><svg class="ic"><use href="#i-book"/></svg>Diary</button>
@@ -888,6 +945,9 @@ const S = {
     {baby:'b2',food:'Pure Carrot Purée',time:'Yesterday · 6:00 PM',symptom:'None',sev:'None'}
   ],
   safeList:['Little Sprout Oat Cereal','Pure Carrot Purée'],
+  todaysMeal:{name:'Pure Carrot Purée',product:'p5',ing:2},
+  selectedSev:null,
+  weekData:{b1:[1,2,1,3,1,0,2], b2:[0,1,0,1,2,0,1]},
   recipes:[
     {id:'r1',name:'Iron-rich lentil & sweet potato mash',time:'15 min',for:'6–9 mo',avoid:'Dairy, Egg'},
     {id:'r2',name:'Banana-oat soft pancakes',time:'20 min',for:'8–12 mo',avoid:'Dairy, Egg'},
@@ -984,6 +1044,7 @@ function navMobile(screen){
   logEvent('screen',screen);
   const preAuth=(screen==='splash'||screen==='login');
   $('#tabbar').classList.toggle('hidden',preAuth);
+  $('#fab').classList.toggle('hidden',screen!=='diary');
   $('#app-content').classList.toggle('full',preAuth);
   $('#statusbar').classList.toggle('hidden',preAuth);$('#statusbar').classList.remove('light');
   $('#cg-banner').classList.toggle('hidden',preAuth||S.role!=='caregiver');
@@ -1193,40 +1254,158 @@ function renderVerdict(){
 }
 function saveSafe(n){if(!S.safeList.includes(n))S.safeList.unshift(n);toast('Saved '+n+' to safe list');}
 
-function renderDiary(){
-  return `
-  <div class="appbar"><div style="flex:1"><h1>Food &amp; symptoms</h1><div class="sub">Track meals and any reactions</div></div></div>
-  <div class="insight">
-    <svg class="ic"><use href="#i-chart"/></svg>
-    <div><b>Pattern detected</b><p>Aria has shown a reaction after <b>dairy</b> 2 of the last 3 times. Consider flagging dairy and checking with your pediatrician.</p></div>
-  </div>
-  <div class="sec-title">Log a symptom</div>
-  <div class="card" style="padding:16px">
-    <div class="field"><label>Food eaten</label><select id="d-food">${S.products.map(p=>`<option>${p.name}</option>`).join('')}<option>Other food…</option></select></div>
-    <div class="field"><label>Reaction / symptom</label><select id="d-sym"><option>Skin rash</option><option>Fussy / gassy</option><option>Vomiting</option><option>Diarrhoea</option><option>Swelling</option><option>None</option></select></div>
-    <div class="field" style="margin-bottom:8px"><label>Severity</label>
-      <div class="sev" id="d-sev">
-        <button onclick="pickSev(this,'Mild')" class="on">Mild</button>
-        <button onclick="pickSev(this,'Moderate')">Moderate</button>
-        <button onclick="pickSev(this,'Severe')">Severe</button>
-      </div>
-    </div>
-    <button class="btn btn-primary" style="width:100%;margin-top:12px" onclick="logSymptom()"><svg class="ic"><use href="#i-plus"/></svg>Add entry</button>
-  </div>
-  <div class="sec-title">History</div>
-  <div class="card">
-    ${S.diary.filter(d=>d.baby===S.activeBaby).map(d=>`<div class="row">
-      <span class="thumb" style="background:${d.symptom==='None'?'var(--safe)':'#E9A6C0'}"><svg class="ic" style="width:20px"><use href="${d.symptom==='None'?'#i-check':'#i-heart'}"/></svg></span>
-      <span class="meta"><b>${d.food}</b><span>${d.time}</span></span>
-      ${d.symptom==='None'?badge('safe'):`<span class="badge b-caution">${d.symptom}</span>`}</div>`).join('')||`<div style="padding:20px;text-align:center;color:var(--ink-3);font-size:13px">No entries yet for ${baby().name}</div>`}
-  </div><div style="height:10px"></div>`;
+const SEV={
+  None:{label:'No Symptoms',face:'#7CC49A',dark:'#1E5E43',bg:'#E7F5EC',mouth:'smile',badge:'b-safe',word:'No symptoms'},
+  Mild:{label:'Mild',face:'#F1CE5B',dark:'#7A5B12',bg:'#FBF3D6',mouth:'flat',badge:'b-caution',word:'Mild'},
+  Moderate:{label:'Moderate',face:'#ED9A5B',dark:'#7A3D12',bg:'#FBEBD9',mouth:'frown',badge:'b-caution',word:'Moderate'},
+  Severe:{label:'Severe',face:'#E07A72',dark:'#7A2320',bg:'#FBE4E1',mouth:'frown2',badge:'b-avoid',word:'Severe'}
+};
+function faceSVG(sev){
+  var s=SEV[sev]||SEV.None;
+  var m={smile:'M12 23 Q20 30 28 23',flat:'M13 25 H27',frown:'M12 28 Q20 22 28 28',frown2:'M12 29 Q20 21 28 29'};
+  return '<svg viewBox="0 0 40 40" class="face"><circle cx="20" cy="20" r="18" fill="'+s.face+'"/><circle cx="14.5" cy="16.5" r="2.2" fill="'+s.dark+'"/><circle cx="25.5" cy="16.5" r="2.2" fill="'+s.dark+'"/><path d="'+m[s.mouth]+'" stroke="'+s.dark+'" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>';
 }
-let sevPick='Mild';
-function pickSev(el,v){document.querySelectorAll('#d-sev button').forEach(b=>b.classList.remove('on'));el.classList.add('on');sevPick=v;}
-function logSymptom(){
-  const food=$('#d-food').value, sym=$('#d-sym').value;
-  S.diary.unshift({baby:S.activeBaby,food,time:'Just now',symptom:sym,sev:sevPick});
-  toast('Symptom logged for '+baby().name);render();
+function faceBtn(sev){
+  var s=SEV[sev], on=(S.selectedSev===sev);
+  return '<button class="emoji-btn '+(on?'on':'')+'" style="color:'+s.face+'" onclick="logSymptomEmoji(\''+sev+'\')" aria-label="'+s.label+'">'
+    +'<span class="emoji-face">'+faceSVG(sev)+'</span>'
+    +'<span class="emoji-lb">'+s.label.replace(' ','<br>')+'</span></button>';
+}
+var SHIELD_OK='<svg viewBox="0 0 80 80"><path d="M40 8 66 18V40c0 18-26 32-26 32S14 58 14 40V18Z" fill="#C9E7D5"/><path d="M40 17 58 24v16c0 13-18 23-18 23S22 53 22 40V24Z" fill="#82C6A0"/><path d="M40 51s-11-6.6-11-14c0-3.6 2.8-5.6 5.6-5.6 2.3 0 4.2 1.7 5.4 3.4 1.2-1.7 3.1-3.4 5.4-3.4 2.8 0 5.6 2 5.6 5.6 0 7.4-11 14-11 14Z" fill="#fff"/><circle cx="62" cy="60" r="11" fill="#fff" stroke="#82C6A0" stroke-width="2.5"/><path d="M57 60l3.2 3.2L67 56" stroke="#1E7A5E" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+var SHIELD_WARN='<svg viewBox="0 0 80 80"><path d="M40 8 66 18V40c0 18-26 32-26 32S14 58 14 40V18Z" fill="#F6E1BA"/><path d="M40 17 58 24v16c0 13-18 23-18 23S22 53 22 40V24Z" fill="#EBB25A"/><path d="M40 30v13" stroke="#fff" stroke-width="4.2" stroke-linecap="round"/><circle cx="40" cy="50" r="2.4" fill="#fff"/></svg>';
+
+function weekChart(){
+  var days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  var wd=S.weekData[S.activeBaby]||[0,0,0,0,0,0,0];
+  var max=Math.max.apply(null,[3].concat(wd));
+  return days.map(function(d,i){
+    var c=wd[i]||0, amber=c>=2, cls=c===0?'zero':(amber?'amber':'green');
+    return '<div class="wk-bar"><span class="wk-val">'+(c||'')+'</span><div class="wk-fill '+cls+'" style="height:'+(c===0?4:Math.round(c/max*88+8))+'%"></div><div class="wk-lb">'+d+'</div></div>';
+  }).join('');
+}
+
+function renderDiary(){
+  var b=baby();
+  var meal=S.todaysMeal||{name:'Today\'s meal',product:'p5',ing:2};
+  var mealType=meal.mealType||'Lunch';
+  var mtimes={Breakfast:'8:00 AM',Lunch:'12:30 PM',Dinner:'6:00 PM',Snack:'3:00 PM'};
+  var mp=S.products.find(function(x){return x.id===meal.product;});
+  var mv=mp?computeVerdict(mp,b):null;
+  var reactions=S.diary.filter(function(d){return d.baby===S.activeBaby && d.sev && d.sev!=='None' && d.symptom!=='None';}).length;
+  return `
+  <div class="appbar"><div style="flex:1"><h1>Food &amp; symptoms</h1><div class="sub">Tracking ${b.name}</div></div></div>
+
+  <div class="card meal-card">
+    <div class="meal-head"><div><b>Today's Meal</b><span>${mtimes[mealType]||'12:30 PM'} \u00b7 ${mealType}</span></div>
+      <button class="meal-edit" onclick="editMeal()" aria-label="Edit meal"><svg class="ic"><use href="#i-edit"/></svg></button></div>
+    <div class="meal-body">
+      ${mp&&PIMG[mp.id]?`<span class="meal-thumb" style="background-image:url(${PIMG[mp.id]})"></span>`:mp?`<span class="meal-thumb" style="background:${mp.color}"></span>`:`<span class="meal-thumb meal-thumb-ico"><svg class="ic"><use href="#i-chef"/></svg></span>`}
+      <div class="meal-info"><b>${meal.name}</b><span>${meal.ing} ingredients</span></div>
+      ${mv?badge(mv.level):'<span class="badge b-mut">Home-made</span>'}
+    </div>
+  </div>
+
+  <div class="card symlog">
+    <div class="sl-head"><span class="sl-ic"><svg class="ic"><use href="#i-book"/></svg></span><b>Symptom Log</b><span class="sl-time">Tap to log</span></div>
+    <div class="emoji-row">${faceBtn('None')}${faceBtn('Mild')}${faceBtn('Moderate')}${faceBtn('Severe')}</div>
+  </div>
+
+  ${reactions===0?`
+  <div class="card pi-card">
+    <div class="pi-head"><span class="pi-ic"><svg class="ic"><use href="#i-chart"/></svg></span><b>Pattern Insight</b></div>
+    <div class="pi-body"><p>No negative reactions detected. Great job! Keep logging to help us identify patterns.</p><span class="pi-illus">${SHIELD_OK}</span></div>
+  </div>`:`
+  <div class="card pi-card warn">
+    <div class="pi-head"><span class="pi-ic warn"><svg class="ic"><use href="#i-chart"/></svg></span><b>Pattern Insight</b></div>
+    <div class="pi-body"><p>${b.name} has ${reactions} logged reaction${reactions>1?'s':''}.${b.allergies.includes('Dairy')?` They often followed <b>dairy</b> \u2014 consider avoiding it and checking with your pediatrician.`:` Keep logging to help us spot the trigger.`}</p><span class="pi-illus">${SHIELD_WARN}</span></div>
+  </div>`}
+
+  <div class="sec-title" style="margin-top:20px">Reactions this week <a onclick="toast('Full reaction history')">See all</a></div>
+  <div class="card" style="padding:14px 12px 8px"><div class="wk-chart">${weekChart()}</div></div>
+
+  <div class="sec-title">Recent entries</div>
+  <div class="card">
+    ${S.diary.map(function(d,idx){return {d:d,idx:idx};}).filter(function(o){return o.d.baby===S.activeBaby;}).slice(0,6).map(function(o){var d=o.d,s=SEV[d.sev]||SEV.None;return `<div class="row" onclick="editEntry(${o.idx})" style="cursor:pointer">
+      <span class="sev-thumb" style="background:${s.bg}">${faceSVG(d.sev||'None')}</span>
+      <span class="meta"><b>${d.food}</b><span>${d.time}</span></span>
+      <span class="badge ${s.badge}">${s.word}</span></div>`;}).join('')||`<div style="padding:20px;text-align:center;color:var(--ink-3);font-size:13px">No entries yet for ${b.name}</div>`}
+  </div><div style="height:12px"></div>`;
+}
+function logSymptomEmoji(sev){
+  S.selectedSev=sev;
+  var meal=(S.todaysMeal&&S.todaysMeal.name)||'Today\'s meal';
+  S.diary.unshift({baby:S.activeBaby,food:meal,time:'Just now',symptom:sev==='None'?'None':sev+' reaction',sev:sev});
+  if(sev!=='None'){var wd=S.weekData[S.activeBaby];var i=(new Date().getDay()+6)%7;wd[i]=(wd[i]||0)+1;}
+  toast(sev==='None'?'Logged \u2014 no symptoms':'Logged a '+sev.toLowerCase()+' reaction');
+  render();
+}
+function editMeal(){
+  var m=S.todaysMeal||{};
+  var types=['Breakfast','Lunch','Dinner','Snack'];
+  var html='<h2 class="sheet-title">Today\'s meal</h2><p class="sheet-sub">Enter the details, or pick a scanned product below.</p>';
+  html+='<div class="field"><label>Meal name</label><input id="tm-name" placeholder="e.g. Sweet potato mash" value="'+((m.custom?m.name:'')||'')+'"></div>';
+  html+='<div class="field"><label>Meal</label><select id="tm-type">'+types.map(function(t){return '<option '+((m.mealType||'Lunch')===t?'selected':'')+'>'+t+'</option>';}).join('')+'</select></div>';
+  html+='<div class="field"><label>Number of ingredients</label><input id="tm-ing" type="number" min="1" max="30" value="'+(m.ing||2)+'"></div>';
+  html+='<button class="sheet-cta" onclick="saveMealManual()">Save meal</button>';
+  html+='<div class="sheet-div">or pick a scanned product</div>';
+  html+='<div class="card" style="box-shadow:none;border:1px solid var(--line)">';
+  html+=S.products.map(function(p){var v=computeVerdict(p,baby());return '<div class="row" onclick="setMeal(\''+p.id+'\')">'+(PIMG[p.id]?'<span class="thumb thumb-img" style="background-image:url('+PIMG[p.id]+')"></span>':'<span class="thumb" style="background:'+p.color+'">'+p.brand[0]+'</span>')+'<span class="meta"><b>'+p.name+'</b><span>'+p.ingredients.length+' ingredients</span></span>'+badge(v.level)+'</div>';}).join('');
+  html+='</div><button class="sheet-ghost" onclick="closeSheet()">Cancel</button>';
+  openSheet(html);
+}
+function saveMealManual(){
+  var name=($('#tm-name').value||'').trim();
+  if(!name){toast('Enter a meal name');return;}
+  S.todaysMeal={name:name,mealType:$('#tm-type').value,ing:parseInt($('#tm-ing').value)||1,custom:true,product:null};
+  closeSheet();toast('Meal saved');render();
+}
+function setMeal(id){var p=S.products.find(function(x){return x.id===id;});S.todaysMeal={name:p.name,product:id,ing:p.ingredients.length,custom:false,mealType:(S.todaysMeal&&S.todaysMeal.mealType)||'Lunch'};closeSheet();toast('Meal updated');render();}
+
+function sevPicker(current,id){
+  id=id||'edit-sev';
+  return '<div class="emoji-row" id="'+id+'">'+['None','Mild','Moderate','Severe'].map(function(sev){var s=SEV[sev],on=(sev===current);return '<button type="button" class="emoji-btn '+(on?'on':'')+'" style="color:'+s.face+'" data-sev="'+sev+'" onclick="pickEditSev(this)"><span class="emoji-face">'+faceSVG(sev)+'</span><span class="emoji-lb">'+s.label.replace(' ','<br>')+'</span></button>';}).join('')+'</div>';
+}
+function pickEditSev(el){el.parentElement.querySelectorAll('.emoji-btn').forEach(function(x){x.classList.remove('on');});el.classList.add('on');}
+function editEntry(idx){
+  var d=S.diary[idx]; if(!d) return;
+  var html='<h2 class="sheet-title">Edit entry</h2>';
+  html+='<div class="field"><label>Food eaten</label><input id="ee-food" value="'+(d.food||'').replace(/"/g,'&quot;')+'"></div>';
+  html+='<div class="field"><label>When</label><input id="ee-when" value="'+(d.time||'').replace(/"/g,'&quot;')+'"></div>';
+  html+='<div class="field"><label>How did baby react?</label>'+sevPicker(d.sev||'None')+'</div>';
+  html+='<button class="sheet-cta" onclick="saveEntry('+idx+')">Save changes</button>';
+  html+='<button class="sheet-danger" onclick="deleteEntry('+idx+')">Delete entry</button>';
+  html+='<button class="sheet-ghost" onclick="closeSheet()">Cancel</button>';
+  openSheet(html);
+}
+function saveEntry(idx){
+  var d=S.diary[idx]; if(!d){closeSheet();return;}
+  d.food=($('#ee-food').value||d.food).trim();
+  d.time=($('#ee-when').value||d.time).trim();
+  var sel=document.querySelector('#edit-sev .emoji-btn.on'); var sev=sel?sel.getAttribute('data-sev'):d.sev;
+  d.sev=sev; d.symptom=(sev==='None'?'None':sev+' reaction');
+  closeSheet();toast('Entry updated');render();
+}
+function deleteEntry(idx){S.diary.splice(idx,1);closeSheet();toast('Entry deleted');render();}
+function addMeal(){
+  var html='<h2 class="sheet-title">Log a meal</h2><p class="sheet-sub">Add what '+baby().name+' ate and how they reacted.</p>';
+  html+='<div class="field"><label>Meal name</label><input id="nm-name" placeholder="e.g. Banana &amp; oat porridge"></div>';
+  html+='<div class="field"><label>Meal</label><select id="nm-type"><option>Breakfast</option><option selected>Lunch</option><option>Dinner</option><option>Snack</option></select></div>';
+  html+='<div class="field"><label>How did baby react?</label>'+sevPicker('None','new-sev')+'</div>';
+  html+='<button class="sheet-cta" onclick="saveNewMeal()">Log meal</button>';
+  html+='<div class="sheet-div">or pick a scanned product</div>';
+  html+='<div class="card" style="box-shadow:none;border:1px solid var(--line)">';
+  html+=S.products.map(function(p){var v=computeVerdict(p,baby());return '<div class="row" onclick="fillMealName(\''+p.id+'\')">'+(PIMG[p.id]?'<span class="thumb thumb-img" style="background-image:url('+PIMG[p.id]+')"></span>':'<span class="thumb" style="background:'+p.color+'">'+p.brand[0]+'</span>')+'<span class="meta"><b>'+p.name+'</b><span>'+p.ingredients.length+' ingredients</span></span>'+badge(v.level)+'</div>';}).join('');
+  html+='</div><button class="sheet-ghost" onclick="closeSheet()">Cancel</button>';
+  openSheet(html);
+}
+function fillMealName(id){var p=S.products.find(function(x){return x.id===id;});var el=document.getElementById('nm-name');if(el){el.value=p.name;el.focus();}toast('Selected '+p.name);}
+function saveNewMeal(){
+  var name=($('#nm-name').value||'').trim(); if(!name){toast('Enter a meal name');return;}
+  var type=$('#nm-type').value;
+  var sel=document.querySelector('#new-sev .emoji-btn.on'); var sev=sel?sel.getAttribute('data-sev'):'None';
+  S.diary.unshift({baby:S.activeBaby, food:name, time:'Today \u00b7 '+type, symptom:(sev==='None'?'None':sev+' reaction'), sev:sev});
+  if(sev!=='None'){var wd=S.weekData[S.activeBaby];var i=(new Date().getDay()+6)%7;wd[i]=(wd[i]||0)+1;}
+  closeSheet();toast('Meal logged');render();
 }
 
 function renderRecipes(){
