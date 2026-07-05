@@ -71,7 +71,7 @@ img{max-width:100%}
 .icon-btn:active{transform:scale(.94)}
 .icon-btn .dot{position:absolute;top:8px;right:9px;width:8px;height:8px;border-radius:50%;background:var(--avoid);border:2px solid #fff}
 
-.content{flex:1;overflow-y:auto;padding:2px 18px 22px;scroll-behavior:smooth}
+.content{flex:1;min-height:0;overflow-y:auto;padding:2px 18px 22px;scroll-behavior:smooth}
 .content::-webkit-scrollbar{width:0}
 
 /* baby switcher */
@@ -526,7 +526,7 @@ tbody tr:last-child td{border-bottom:none}
   .acard td[data-label=""]{justify-content:flex-end;padding-top:4px;padding-bottom:10px}
 }
 @media (max-width:640px){
-  html,body{height:100dvh}
+  html,body{height:var(--appvh,100dvh)}
   .chrome{padding:8px 10px;gap:8px}
   .brand small{display:none}
   .brand>span:last-child{display:none}
@@ -542,6 +542,10 @@ tbody tr:last-child td{border-bottom:none}
   .notch{display:none}
   .screen{border-radius:0}
   .statusbar{display:none}
+  .splash-hero,.login-hero{position:relative;inset:auto;width:100%;background-size:100% auto;background-position:top center;background-repeat:no-repeat}
+  .splash-hero{aspect-ratio:853/1844}
+  .login-hero{aspect-ratio:852/1846}
+  #app-content.full{-webkit-overflow-scrolling:touch;overflow-y:auto}
   .admin{height:100%;max-width:100%;border-radius:0;border:none}
   .apanel{min-height:0}
   .abody{min-height:0}
@@ -1563,6 +1567,7 @@ function saveIngredient(){
 
 /* ============================ FIT TO VIEWPORT ============================ */
 function fitViews(){
+  document.documentElement.style.setProperty('--appvh', window.innerHeight+'px');
   const stage=document.querySelector('.stage');
   const availH=Math.max(320,stage.clientHeight-24);
   const availW=Math.max(280,stage.clientWidth-24);
@@ -1572,6 +1577,7 @@ function fitViews(){
   root.setProperty('--avail-h', availH+'px');
 }
 window.addEventListener('resize',fitViews);
+if(window.visualViewport){window.visualViewport.addEventListener('resize',fitViews);window.visualViewport.addEventListener('scroll',fitViews);}
 window.addEventListener('load',fitViews);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitViews);
 
